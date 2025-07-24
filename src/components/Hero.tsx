@@ -9,19 +9,19 @@ const Hero = () => {
     {
       title: "National Disability Aid UAE",
       subtitle: "Your gateway to exclusive benefits and support services across the UAE",
-      image: "/Design sans titre copy.png",
+      image: "/Design sans titre.png",
       cta: "Apply for Disability Aid"
     },
     {
       title: "Carers Support Services",
       subtitle: "Recognition and benefits for dedicated caregivers supporting individuals with disabilities",
-      image: "/scrole_img4 copy.jpg",
+      image: "/scrole_img.jpg",
       cta: "Apply for Carers Support"
     },
     {
       title: "Customer Support Services",
       subtitle: "Enhanced assistance and priority support for individuals requiring additional help",
-      image: "/scroll_img2 copy.jpg",
+      image: "/scrole_img2.jpg",
       cta: "Apply for Support Services"
     }
   ];
