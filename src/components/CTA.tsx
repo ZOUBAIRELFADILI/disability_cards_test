@@ -23,11 +23,11 @@ const CTA = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Get Your National Disability Card Today
+            Get Your National Disability Aid Today
           </h2>
           <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
             Join thousands of UAE residents who are already enjoying exclusive benefits, 
-            discounts, and support services with their National Disability Cards.
+            discounts, and support services with National Disability Aid.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ const CTA = () => {
               <CreditCard className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              Disabilities Card
+              Disability Aid Services
             </h3>
             <p className="text-green-100 mb-6 leading-relaxed">
               Access comprehensive support services, healthcare benefits, and exclusive 
@@ -60,7 +60,7 @@ const CTA = () => {
               <div className="text-2xl">❤️</div>
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              Carers Card
+              Carers Support
             </h3>
             <p className="text-green-100 mb-6 leading-relaxed">
               Recognition and support for dedicated caregivers with access to respite 
@@ -81,7 +81,7 @@ const CTA = () => {
               <div className="text-2xl">🤝</div>
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              Customer Support Card
+              Customer Support Services
             </h3>
             <p className="text-green-100 mb-6 leading-relaxed">
               Enhanced assistance and priority support for individuals requiring 

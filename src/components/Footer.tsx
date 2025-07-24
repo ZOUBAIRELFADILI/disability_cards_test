@@ -12,16 +12,16 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <img 
                 src="/Logo.png" 
-                alt="GCDC Logo" 
+                alt="NDA Logo" 
                 className="h-10 w-auto"
               />
               <div>
-                <h3 className="text-xl font-bold">GCDC</h3>
-                <p className="text-sm text-uae-green">Global Carers & Disability Cards</p>
+                <h3 className="text-xl font-bold">NDA</h3>
+                <p className="text-sm text-uae-green">National Disability Aid</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              The official provider of National Disability Cards in the UAE, dedicated to 
+              The official provider of National Disability Aid services in the UAE, dedicated to 
               creating an inclusive society through comprehensive support services and 
               exclusive benefits for cardholders and their caregivers.
             </p>
@@ -128,7 +128,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 GCDC - Global Carers & Disability Cards. All rights reserved.
+              © 2024 NDA - National Disability Aid. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy-policy" className="text-gray-400 hover:text-uae-green text-sm transition-colors duration-300">

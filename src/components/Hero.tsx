@@ -7,22 +7,22 @@ const Hero = () => {
   
   const slides = [
     {
-      title: "National Disability Card UAE",
+      title: "National Disability Aid UAE",
       subtitle: "Your gateway to exclusive benefits and support services across the UAE",
-      image: "/Global Disability Carde.jpg",
-      cta: "Apply for Disabilities Card"
+      image: "/Design sans titre copy.png",
+      cta: "Apply for Disability Aid"
     },
     {
-      title: "Carers Support Card",
+      title: "Carers Support Services",
       subtitle: "Recognition and benefits for dedicated caregivers supporting individuals with disabilities",
-      image: "/Global Carers Card DEMO_page-0003.jpg",
-      cta: "Apply for Carers Card"
+      image: "/scrole_img4 copy.jpg",
+      cta: "Apply for Carers Support"
     },
     {
-      title: "Customer Support Card",
+      title: "Customer Support Services",
       subtitle: "Enhanced assistance and priority support for individuals requiring additional help",
-      image: "/Global Support Card.jpg",
-      cta: "Apply for Support Card"
+      image: "/scroll_img2 copy.jpg",
+      cta: "Apply for Support Services"
     }
   ];
 
@@ -107,7 +107,7 @@ const Hero = () => {
                   <div className="bg-uae-green p-2 rounded-full animate-float">
                     <CreditCard className="w-6 h-6" />
                   </div>
-                  <span className="text-lg">Official Cards</span>
+                  <span className="text-lg">Official Services</span>
                 </div>
                 <div className="flex items-center space-x-3 text-white">
                   <div className="bg-uae-red p-2 rounded-full animate-float" style={{ animationDelay: '0.5s' }}>

@@ -111,8 +111,8 @@ const Header = () => {
                 className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
               />
               <div>
-                <h1 className="text-4xl font-bold text-gray-900">GCDC</h1>
-                <p className="text-sm text-uae-green">National Disability Card</p>
+                <h1 className="text-4xl font-bold text-gray-900">NDA</h1>
+                <p className="text-sm text-uae-green">National Disability Aid</p>
               </div>
             </Link>
 
