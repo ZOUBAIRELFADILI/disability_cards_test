@@ -101,7 +101,7 @@
 }
 
 .animate-scroll-partners {
-  animation: scroll-partners 30s linear infinite;
+  animation: scroll-partners 15s linear infinite;
 }
 
 .animate-scroll-partners:hover {

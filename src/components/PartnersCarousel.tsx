@@ -80,13 +80,13 @@ const PartnersCarousel = () => {
               {duplicatedPartners.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex-shrink-0 mx-4 group"
-                  style={{ width: '200px' }}
+                  className="flex-shrink-0 mx-2 group"
+                  style={{ width: '160px' }}
                 >
                   <img
                     src={partner.logo}
                     alt={partner.alt}
-                    className="w-full h-16 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100 group-hover:scale-105"
+                    className="w-full h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
