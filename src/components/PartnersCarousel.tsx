@@ -59,7 +59,7 @@ const PartnersCarousel = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 overflow-hidden">
+    <section className="py-16 bg-gradient-to-r from-uae-green to-green-700 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-8">
@@ -71,8 +71,8 @@ const PartnersCarousel = () => {
         {/* Scrolling Partners Container */}
         <div className="relative">
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-blue-600 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-blue-700 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-uae-green to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-green-700 to-transparent z-10 pointer-events-none"></div>
           
           {/* Scrolling Track */}
           <div className="overflow-hidden">
@@ -109,15 +109,15 @@ const PartnersCarousel = () => {
           </div>
           <div>
             <div className="text-3xl font-bold text-white mb-2">500+</div>
-            <div className="text-blue-100 font-medium">Locations</div>
+            <div className="text-green-100 font-medium">Locations</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-white mb-2">25%</div>
-            <div className="text-blue-100 font-medium">Average Discount</div>
+            <div className="text-green-100 font-medium">Average Discount</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-white mb-2">7</div>
-            <div className="text-blue-100 font-medium">Emirates Covered</div>
+            <div className="text-green-100 font-medium">Emirates Covered</div>
           </div>
         </div>
       </div>
