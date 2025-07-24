@@ -44,24 +44,34 @@ const CEOWord = () => {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500">
                 <Quote className="w-8 h-8 text-green-500 mb-4" />
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "At Global Carers & Disability Cards, we believe that every individual deserves equal access to opportunities, 
-                  services, and experiences. Our mission extends far beyond providing identification cards – we are building 
-                  bridges to create a truly inclusive society where everyone can thrive."
+                  "At GCDC, we are committed to creating a more inclusive society where every individual, regardless of their 
+                  abilities or circumstances, can access the support and opportunities they deserve. Our mission goes beyond 
+                  simply providing identification cards – we are building bridges to connect people with essential resources 
+                  and creating pathways for meaningful participation in community life."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "Since our establishment, we have been unwavering in our commitment to breaking down barriers and creating 
-                  pathways for people with disabilities, their dedicated carers, and those who need additional support. Each 
-                  card we issue represents hope, dignity, and the promise of a more accessible tomorrow."
+                  "Since our founding, we have remained steadfast in our commitment to breaking down barriers and fostering 
+                  understanding. Each card we issue represents not just identification, but hope, dignity, and the promise 
+                  of enhanced quality of life. We recognize that true inclusion requires more than good intentions – it 
+                  demands action, partnership, and unwavering dedication to our community."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "Our comprehensive approach encompasses not just identification, but access to essential services, exclusive 
-                  benefits, and a supportive community network. We work tirelessly with our partners across the UAE to ensure 
-                  that our cardholders receive the recognition and assistance they deserve."
+                  "Our approach is comprehensive, encompassing not only the provision of cards but also the development of 
+                  robust support networks, exclusive benefits, and advocacy for policy changes that benefit our cardholders. 
+                  We work closely with government agencies, healthcare providers, retailers, and service organizations to 
+                  ensure that our cards open doors to real, tangible benefits."
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  "The partnerships we have forged across the UAE represent more than business relationships – they are 
+                  collaborations built on shared values of inclusion, respect, and social responsibility. Together, we are 
+                  creating a network of support that extends far beyond what any single organization could achieve alone."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  "Together with our growing network of partners and the unwavering support of the UAE government, we continue 
-                  to expand access to discounts, services, and support systems that make daily life more manageable and enjoyable 
-                  for our cardholders. This is not just our business – it's our calling to serve humanity."
+                  "As we look to the future, our commitment remains unchanged: to serve our community with integrity, 
+                  compassion, and excellence. We will continue to innovate, expand our services, and advocate for the 
+                  rights and needs of people with disabilities, their carers, and those requiring additional support. 
+                  This is not merely our profession – it is our calling to serve humanity and build a better tomorrow 
+                  for all."
                 </p>
               </div>
             </div>
@@ -113,18 +123,19 @@ const CEOWord = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Leadership Commitment</h3>
             <div className="space-y-6 text-gray-700">
               <p className="text-lg leading-relaxed">
-                "As CEO, I am personally committed to ensuring that GCDC remains at the forefront of disability advocacy 
-                and support services in the UAE. We continuously invest in technology, training, and partnerships to enhance 
-                the experience and benefits available to our cardholders."
+                "As CEO, I am personally committed to ensuring that GCDC remains at the forefront of disability support 
+                services and advocacy in the UAE. We continuously invest in technology, staff training, and strategic 
+                partnerships to enhance the experience and expand the benefits available to our cardholders."
               </p>
               <p className="text-lg leading-relaxed">
-                "Our team works around the clock to identify new opportunities for partnerships, develop innovative support 
-                services, and advocate for policy changes that benefit our community. We believe in transparency, accountability, 
-                and measurable impact in everything we do."
+                "Our dedicated team works tirelessly to identify new partnership opportunities, develop innovative support 
+                services, and advocate for policy changes that benefit our community. We believe in transparency, 
+                accountability, and measurable impact in all our endeavors."
               </p>
               <p className="text-lg leading-relaxed">
-                "I invite you to join us in this important mission. Whether you are seeking support for yourself or a loved one, 
-                or you represent an organization that shares our values, together we can build a more inclusive and accessible UAE."
+                "I invite you to join us in this vital mission. Whether you are seeking support for yourself or a loved one, 
+                or you represent an organization that shares our values of inclusion and social responsibility, together we 
+                can build a more accessible and inclusive UAE for all."
               </p>
             </div>
           </div>
