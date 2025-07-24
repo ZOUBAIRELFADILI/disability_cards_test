@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { CreditCard, Lock, ArrowLeft, CheckCircle } from 'lucide-react';
-import stripePromise from '../utils/stripe';
+import { CreditCard, Lock, ArrowLeft, CheckCircle, AlertCircle } from 'lucide-react';
+import { createCheckoutSession, redirectToCheckout } from '../utils/stripe';
 
 interface PaymentProps {
   amount: number;
@@ -15,106 +15,32 @@ const StripePayment: React.FC = () => {
   const { amount = 300, cardType = 'Disabilities Card', applicationData } = location.state || {};
 
   const [isProcessing, setIsProcessing] = useState(false);
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [cardDetails, setCardDetails] = useState({
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
-    cardholderName: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    
-    // Format card number with spaces
-    if (name === 'cardNumber') {
-      const formattedValue = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim();
-      if (formattedValue.length <= 19) {
-        setCardDetails(prev => ({ ...prev, [name]: formattedValue }));
-      }
-      return;
-    }
-    
-    // Format expiry date
-    if (name === 'expiryDate') {
-      const formattedValue = value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2');
-      if (formattedValue.length <= 5) {
-        setCardDetails(prev => ({ ...prev, [name]: formattedValue }));
-      }
-      return;
-    }
-    
-    // Limit CVV to 3 digits
-    if (name === 'cvv') {
-      const formattedValue = value.replace(/\D/g, '');
-      if (formattedValue.length <= 3) {
-        setCardDetails(prev => ({ ...prev, [name]: formattedValue }));
-      }
-      return;
-    }
-    
-    setCardDetails(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handlePayment = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handlePayment = async () => {
     setIsProcessing(true);
     setError(null);
 
     try {
-      // Simulate payment processing
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Check if backend is available first
+      const healthCheck = await fetch('http://localhost:3001/health').catch(() => null);
       
-      // For demo purposes, we'll simulate a successful payment
-      // In a real application, you would integrate with Stripe's API
-      const stripe = await stripePromise;
-      
-      if (!stripe) {
-        throw new Error('Stripe failed to initialize');
+      if (!healthCheck || !healthCheck.ok) {
+        throw new Error('Payment service is currently unavailable. Please try again later or contact support.');
       }
 
-      // Simulate successful payment
-      setPaymentSuccess(true);
+      // Create checkout session
+      const sessionId = await createCheckoutSession(amount, cardType, applicationData);
       
-      // Redirect to success page after 3 seconds
-      setTimeout(() => {
-        navigate('/', { 
-          state: { 
-            paymentSuccess: true, 
-            cardType: cardType,
-            amount: amount 
-          } 
-        });
-      }, 3000);
-
+      // Redirect to Stripe Checkout
+      await redirectToCheckout(sessionId);
     } catch (err) {
-      setError('Payment failed. Please try again.');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to start payment process. Please try again.';
+      setError(errorMessage);
       console.error('Payment error:', err);
-    } finally {
       setIsProcessing(false);
     }
   };
-
-  if (paymentSuccess) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-8 h-8 text-green-600" />
-          </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Payment Successful!</h2>
-          <p className="text-gray-600 mb-6">
-            Your payment of {amount} AED for {cardType} has been processed successfully.
-          </p>
-          <p className="text-sm text-gray-500">
-            Redirecting to home page...
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -149,110 +75,82 @@ const StripePayment: React.FC = () => {
           </div>
         </div>
 
-        {/* Payment Form */}
+        {/* Application Details */}
+        {applicationData && (
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Application Details</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p><strong>Name:</strong> {applicationData.firstName} {applicationData.lastName}</p>
+                <p><strong>Email:</strong> {applicationData.email}</p>
+              </div>
+              <div>
+                <p><strong>Phone:</strong> {applicationData.phone}</p>
+                <p><strong>Emirates ID:</strong> {applicationData.emiratesId}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Payment Section */}
         <div className="bg-white rounded-xl shadow-lg p-8">
           <div className="flex items-center mb-6">
             <Lock className="w-5 h-5 text-green-600 mr-2" />
-            <span className="text-sm text-gray-600">Secure SSL Encrypted Payment</span>
+            <span className="text-sm text-gray-600">Secure Payment with Stripe</span>
           </div>
 
-          <form onSubmit={handlePayment} className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Cardholder Name *
-              </label>
-              <input
-                type="text"
-                name="cardholderName"
-                required
-                value={cardDetails.cardholderName}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-uae-green focus:border-uae-green"
-                placeholder="John Doe"
-              />
-            </div>
+          <div className="text-center mb-6">
+            <CreditCard className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure Checkout</h3>
+            <p className="text-gray-600">
+              You will be redirected to Stripe's secure checkout page to complete your payment.
+            </p>
+          </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Card Number *
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  name="cardNumber"
-                  required
-                  value={cardDetails.cardNumber}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-uae-green focus:border-uae-green"
-                  placeholder="4242 4242 4242 4242"
-                />
-                <CreditCard className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-              </div>
-              <p className="text-xs text-gray-500 mt-1">
-                Test card: 4242 4242 4242 4242
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Expiry Date *
-                </label>
-                <input
-                  type="text"
-                  name="expiryDate"
-                  required
-                  value={cardDetails.expiryDate}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-uae-green focus:border-uae-green"
-                  placeholder="MM/YY"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  CVV *
-                </label>
-                <input
-                  type="text"
-                  name="cvv"
-                  required
-                  value={cardDetails.cvv}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-uae-green focus:border-uae-green"
-                  placeholder="123"
-                />
-              </div>
-            </div>
-
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+              <div className="flex items-center">
+                <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
                 <p className="text-red-800 text-sm">{error}</p>
               </div>
-            )}
+            </div>
+          )}
 
-            <button
-              type="submit"
-              disabled={isProcessing}
-              className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
-                isProcessing
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-uae-green hover:bg-green-700 transform hover:scale-105'
-              }`}
-            >
-              {isProcessing ? (
-                <div className="flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Processing Payment...
-                </div>
-              ) : (
-                `Pay ${amount} AED`
-              )}
-            </button>
-          </form>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <h4 className="text-sm font-semibold text-blue-900 mb-2">Test Mode Information</h4>
+            <p className="text-blue-800 text-sm mb-2">
+              This is a test payment. Use the following test card details:
+            </p>
+            <ul className="text-blue-700 text-sm space-y-1">
+              <li>• Card Number: 4242 4242 4242 4242</li>
+              <li>• Expiry: Any future date (e.g., 12/25)</li>
+              <li>• CVV: Any 3 digits (e.g., 123)</li>
+              <li>• Name: Any name</li>
+            </ul>
+          </div>
+
+          <button
+            onClick={handlePayment}
+            disabled={isProcessing}
+            className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-300 ${
+              isProcessing
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-uae-green hover:bg-green-700 transform hover:scale-105'
+            }`}
+          >
+            {isProcessing ? (
+              <div className="flex items-center justify-center">
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                Redirecting to Stripe...
+              </div>
+            ) : (
+              `Pay ${amount} AED with Stripe`
+            )}
+          </button>
 
           <div className="mt-6 text-center">
             <p className="text-xs text-gray-500">
-              Your payment is secured by 256-bit SSL encryption
+              Powered by Stripe • Your payment is secured by 256-bit SSL encryption
             </p>
           </div>
         </div>

@@ -5,30 +5,55 @@ const stripePromise = loadStripe('pk_test_51R208k2em5dbbL8YLOXNLLwKGDxjk20RLvZ1N
 
 export default stripePromise;
 
-export const createPaymentSession = async (amount: number, cardType: string) => {
+export const createCheckoutSession = async (amount: number, cardType: string, applicationData: any) => {
   try {
-    // In a real application, this would be a call to your backend
-    // For demo purposes, we'll simulate the payment flow
-    const response = await fetch('/api/create-payment-session', {
+    // Add timeout to prevent hanging
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+    const response = await fetch('http://localhost:3001/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      signal: controller.signal,
       body: JSON.stringify({
-        amount: amount * 100, // Convert to cents
-        currency: 'aed',
-        cardType: cardType,
+        amount,
+        cardType,
+        applicationData,
       }),
     });
 
+    clearTimeout(timeoutId);
+
     if (!response.ok) {
-      throw new Error('Failed to create payment session');
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to create checkout session');
     }
 
-    const session = await response.json();
-    return session;
+    const { sessionId } = await response.json();
+    return sessionId;
   } catch (error) {
-    console.error('Error creating payment session:', error);
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('Payment service timeout. Please check your connection and try again.');
+    }
+    console.error('Error creating checkout session:', error);
+    throw error;
+  }
+};
+
+export const redirectToCheckout = async (sessionId: string) => {
+  const stripe = await stripePromise;
+  
+  if (!stripe) {
+    throw new Error('Stripe failed to initialize');
+  }
+
+  const { error } = await stripe.redirectToCheckout({
+    sessionId,
+  });
+
+  if (error) {
     throw error;
   }
 };
