@@ -76,19 +76,26 @@ const PartnersCarousel = () => {
           
           {/* Scrolling Track */}
           <div className="overflow-hidden">
-            <div className="flex animate-scroll-partners">
+            <div className="flex animate-scroll-partners items-center">
               {duplicatedPartners.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex-shrink-0 mx-2 group"
-                  style={{ width: '160px' }}
+                  className="flex-shrink-0 mx-3 group relative"
+                  style={{ width: '200px' }}
                 >
-                  <img
-                    src={partner.logo}
-                    alt={partner.alt}
-                    className="w-full h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                  <div className="bg-white rounded-xl p-4 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-2">
+                    <img
+                      src={partner.logo}
+                      alt={partner.alt}
+                      className="w-full h-16 object-contain transition-all duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  
+                  {/* Hover overlay with partner name */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-2">
+                    <span className="text-white text-sm font-medium">{partner.name}</span>
+                  </div>
                 </div>
               ))}
             </div>
