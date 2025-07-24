@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import CardShowcase from '../components/CardShowcase';
 import ServicesOverview from '../components/ServicesOverview';
-import Partners from '../components/PartnersSection';
+import ApplicationProcess from '../components/ApplicationProcess';
 import Stats from '../components/Stats';
 import Testimonials from '../components/Testimonials';
 import CTA from '../components/CTA';
@@ -13,7 +13,7 @@ const Home = () => {
       <Hero />
       <CardShowcase />
       <ServicesOverview />
-      <Partners />
+      <ApplicationProcess />
       <Stats />
       <Testimonials />
       <CTA />
