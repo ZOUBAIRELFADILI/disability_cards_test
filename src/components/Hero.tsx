@@ -47,11 +47,11 @@ const Hero = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ 
               backgroundImage: `url(${slide.image})`,
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat'
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
       ))}
 
