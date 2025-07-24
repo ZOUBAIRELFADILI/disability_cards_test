@@ -33,7 +33,7 @@ const CEOWord = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <h3 className="text-2xl font-bold text-gray-900">Ahmed Al-Mansouri</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Alex Abassi</h3>
                 <p className="text-green-600 font-semibold">Chief Executive Officer</p>
                 <p className="text-gray-600 mt-2">Global Carers & Disability Cards</p>
               </div>
@@ -44,34 +44,19 @@ const CEOWord = () => {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500">
                 <Quote className="w-8 h-8 text-green-500 mb-4" />
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "At GCDC, we are committed to creating a more inclusive society where every individual, regardless of their 
-                  abilities or circumstances, can access the support and opportunities they deserve. Our mission goes beyond 
-                  simply providing identification cards – we are building bridges to connect people with essential resources 
-                  and creating pathways for meaningful participation in community life."
+                  "Many people live with invisible disabilities conditions like chronic pain, mental health challenges, and neurological disorders that aren't immediately noticeable but significantly affect everyday life. Despite being hidden, these disabilities are just as impactful and deserving of support as any visible condition. Those who face these challenges often deal with ongoing physical, emotional, and mental strain while receiving little recognition or understanding in public settings, workplaces, or when accessing services."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "Since our founding, we have remained steadfast in our commitment to breaking down barriers and fostering 
-                  understanding. Each card we issue represents not just identification, but hope, dignity, and the promise 
-                  of enhanced quality of life. We recognize that true inclusion requires more than good intentions – it 
-                  demands action, partnership, and unwavering dedication to our community."
+                  "There is a growing need for an official card that acknowledges and validates these invisible disabilities. This type of identification can help ensure that individuals are treated with the same level of care, accommodation, and respect as those with visible impairments. It can also promote greater awareness and bridge the gap in support systems, encouraging a more inclusive and empathetic society."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "Our approach is comprehensive, encompassing not only the provision of cards but also the development of 
-                  robust support networks, exclusive benefits, and advocacy for policy changes that benefit our cardholders. 
-                  We work closely with government agencies, healthcare providers, retailers, and service organizations to 
-                  ensure that our cards open doors to real, tangible benefits."
+                  "This is the driving force behind my commitment to launching the Disability and Carer Card initiative."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "The partnerships we have forged across the UAE represent more than business relationships – they are 
-                  collaborations built on shared values of inclusion, respect, and social responsibility. Together, we are 
-                  creating a network of support that extends far beyond what any single organization could achieve alone."
+                  "In addition, we are proud to introduce the Customer Support Card, recognizing the often overlooked efforts of those working on the front lines of customer service. These individuals serve as the bridge between organisations and the public, managing complex situations with patience, empathy, and professionalism. They too deserve acknowledgment, respect, and the resources to thrive in their roles."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  "As we look to the future, our commitment remains unchanged: to serve our community with integrity, 
-                  compassion, and excellence. We will continue to innovate, expand our services, and advocate for the 
-                  rights and needs of people with disabilities, their carers, and those requiring additional support. 
-                  This is not merely our profession – it is our calling to serve humanity and build a better tomorrow 
-                  for all."
+                  "This project is rooted in dignity, inclusion, and gratitude for the disabled, the carers, and the support workers who make everyday life more humane for us all."
                 </p>
               </div>
             </div>
@@ -92,9 +77,7 @@ const CEOWord = () => {
                 <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                To create a UAE where every person, regardless of their abilities or circumstances, can participate fully 
-                in society with dignity, independence, and equal opportunities for growth, success, and meaningful contribution 
-                to their communities.
+                Our mission is to provide individuals with disabilities, as well as the carers who selflessly support them, with the recognition and services they deserve.
               </p>
             </div>
 
@@ -107,9 +90,7 @@ const CEOWord = () => {
                 <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                To provide comprehensive disability card services that connect individuals with essential resources, 
-                exclusive benefits, and robust support systems while advocating for accessibility, inclusion, and equal 
-                opportunities across all sectors of UAE society.
+                This initiative aims to ensure that those with special needs receive the respect, assistance, and opportunities they need to thrive, and that carers are acknowledged for their vital role in this journey.
               </p>
             </div>
           </div>
