@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start-backend": "node server.js"
+    "start-backend": "killall -r \"node server.js\" || true && node server.js"
   },
   "dependencies": {
     "@stripe/stripe-js": "^7.6.1",
