@@ -35,7 +35,7 @@ const CEOWord = () => {
               <div className="mt-8">
                 <h3 className="text-2xl font-bold text-gray-900">Ahmed Al-Mansouri</h3>
                 <p className="text-green-600 font-semibold">Chief Executive Officer</p>
-                <p className="text-gray-600 mt-2">National Disability Card Services</p>
+                <p className="text-gray-600 mt-2">Global Carers & Disability Cards</p>
               </div>
             </div>
 
@@ -44,13 +44,24 @@ const CEOWord = () => {
               <div className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500">
                 <Quote className="w-8 h-8 text-green-500 mb-4" />
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "At National Disability Card Services, we believe that every individual deserves equal access to opportunities, services, and experiences. Our mission goes beyond providing cards – we're building bridges to a more inclusive UAE."
+                  "At Global Carers & Disability Cards, we believe that every individual deserves equal access to opportunities, 
+                  services, and experiences. Our mission extends far beyond providing identification cards – we are building 
+                  bridges to create a truly inclusive society where everyone can thrive."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  "Since our inception, we have been committed to breaking down barriers and creating pathways for people with disabilities, their carers, and those who need additional support. Each card we issue represents hope, dignity, and the promise of a better tomorrow."
+                  "Since our establishment, we have been unwavering in our commitment to breaking down barriers and creating 
+                  pathways for people with disabilities, their dedicated carers, and those who need additional support. Each 
+                  card we issue represents hope, dignity, and the promise of a more accessible tomorrow."
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  "Our comprehensive approach encompasses not just identification, but access to essential services, exclusive 
+                  benefits, and a supportive community network. We work tirelessly with our partners across the UAE to ensure 
+                  that our cardholders receive the recognition and assistance they deserve."
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  "Together with our partners across the UAE, we continue to expand access to discounts, services, and support systems that make daily life more manageable and enjoyable for our cardholders. This is not just our business – it's our calling."
+                  "Together with our growing network of partners and the unwavering support of the UAE government, we continue 
+                  to expand access to discounts, services, and support systems that make daily life more manageable and enjoyable 
+                  for our cardholders. This is not just our business – it's our calling to serve humanity."
                 </p>
               </div>
             </div>
@@ -71,9 +82,9 @@ const CEOWord = () => {
                 <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                To create a UAE where every person, regardless of their abilities or circumstances, 
-                can participate fully in society with dignity, independence, and equal opportunities 
-                for growth and success.
+                To create a UAE where every person, regardless of their abilities or circumstances, can participate fully 
+                in society with dignity, independence, and equal opportunities for growth, success, and meaningful contribution 
+                to their communities.
               </p>
             </div>
 
@@ -86,9 +97,34 @@ const CEOWord = () => {
                 <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                To provide comprehensive disability card services that connect individuals with 
-                essential resources, discounts, and support systems while advocating for 
-                accessibility and inclusion across all sectors of UAE society.
+                To provide comprehensive disability card services that connect individuals with essential resources, 
+                exclusive benefits, and robust support systems while advocating for accessibility, inclusion, and equal 
+                opportunities across all sectors of UAE society.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Leadership Commitment */}
+      <div className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Leadership Commitment</h3>
+            <div className="space-y-6 text-gray-700">
+              <p className="text-lg leading-relaxed">
+                "As CEO, I am personally committed to ensuring that GCDC remains at the forefront of disability advocacy 
+                and support services in the UAE. We continuously invest in technology, training, and partnerships to enhance 
+                the experience and benefits available to our cardholders."
+              </p>
+              <p className="text-lg leading-relaxed">
+                "Our team works around the clock to identify new opportunities for partnerships, develop innovative support 
+                services, and advocate for policy changes that benefit our community. We believe in transparency, accountability, 
+                and measurable impact in everything we do."
+              </p>
+              <p className="text-lg leading-relaxed">
+                "I invite you to join us in this important mission. Whether you are seeking support for yourself or a loved one, 
+                or you represent an organization that shares our values, together we can build a more inclusive and accessible UAE."
               </p>
             </div>
           </div>
@@ -102,7 +138,7 @@ const CEOWord = () => {
             Join Us in Building an Inclusive Future
           </h2>
           <p className="text-xl text-green-100 mb-8">
-            Together, we can create a society where everyone has the opportunity to thrive
+            Together, we can create a society where everyone has the opportunity to thrive and contribute
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
