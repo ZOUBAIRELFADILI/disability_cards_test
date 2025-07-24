@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CheckCircle, ArrowRight, Upload, FileText, Clock, Shield, Heart } from 'lucide-react';
 
 const ApplyCarers = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -52,7 +54,14 @@ const ApplyCarers = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Carers Card application submitted successfully! We will contact you within 48 hours.');
+    // Redirect to payment page with application data
+    navigate('/payment', {
+      state: {
+        amount: 300,
+        cardType: 'Carers Card',
+        applicationData: formData
+      }
+    });
   };
 
   const renderStepContent = () => {

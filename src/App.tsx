@@ -23,6 +23,7 @@ import RenewCustomerSupport from './pages/RenewCustomerSupport';
 import DonateNow from './pages/DonateNow';
 import BecomeFranchise from './pages/BecomeFranchise';
 import Contact from './pages/Contact';
+import StripePayment from './components/StripePayment';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             <Route path="/donate" element={<DonateNow />} />
             <Route path="/franchise" element={<BecomeFranchise />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/payment" element={<StripePayment />} />
           </Routes>
         </main>
         <Footer />
