@@ -83,18 +83,12 @@ const PartnersCarousel = () => {
                   className="flex-shrink-0 mx-4 group"
                   style={{ width: '200px' }}
                 >
-                  <div className="bg-white rounded-lg p-6 h-24 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:bg-gray-50">
-                    <img
-                      src={partner.logo}
-                      alt={partner.alt}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
-                      style={{
-                        maxWidth: '160px',
-                        maxHeight: '60px'
-                      }}
-                      loading="lazy"
-                    />
-                  </div>
+                  <img
+                    src={partner.logo}
+                    alt={partner.alt}
+                    className="w-full h-16 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100 group-hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
