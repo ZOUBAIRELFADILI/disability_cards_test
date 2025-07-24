@@ -1,146 +1,116 @@
 import React, { useState, useEffect } from 'react';
-import { CreditCard, RotateCcw, Eye } from 'lucide-react';
 
 const CardShowcase = () => {
   const [activeCard, setActiveCard] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [showFrontView, setShowFrontView] = useState(true);
 
   const cards = [
     {
       name: "Disabilities Card",
-      frontImage: "/Global Disability Carde.jpg",
-      backImage: "/Global Disability Carde.jpg",
+      image: "/Global Disability Carde.jpg",
       title: "Secure Proof of Disability for Disabled People",
       subtitle: "NATIONAL DISABILITY CARD",
       description: "The National Disability Card allows you to quickly and easily visually identify people with disabilities.",
       validity: "Valid for three years",
-      features: {
-        front: [
-          {
-            title: "Personal Information",
-            description: "Featuring the card holder's name.",
-            position: "left"
-          },
-          {
-            title: "Photo Identification", 
-            description: "A full colour photo prevents misuse and provides easy visual identification of the card holder.",
-            position: "left"
-          },
-          {
-            title: "High Security Features",
-            description: "The card is protected by a number of high quality security features including a secure watermark over the card surface, precise intricate guilloche patterns and bespoke background and symbols.",
-            position: "left"
-          }
-        ],
-        back: [
-          {
-            title: "Unique Card Number",
-            description: "An individual UCN is assigned to every card.",
-            position: "right"
-          },
-          {
-            title: "National Flag",
-            description: "All our cards are made and exclusively issued to UAE addresses.",
-            position: "right"
-          },
-          {
-            title: "International Symbol of Access",
-            description: "The ISA is maintained as an international standard (ISO 7001) by the International Commission on Technology and Accessibility (ICTA), a committee of Rehabilitation International (RI).",
-            position: "right"
-          }
-        ]
-      }
+      leftFeatures: [
+        {
+          title: "Personal Information",
+          description: "Featuring the card holder's name."
+        },
+        {
+          title: "Photo Identification", 
+          description: "A full colour photo prevents misuse and provides easy visual identification of the card holder."
+        },
+        {
+          title: "High Security Features",
+          description: "The card is protected by a number of high quality security features including a secure watermark over the card surface, precise intricate guilloche patterns and bespoke background and symbols."
+        }
+      ],
+      rightFeatures: [
+        {
+          title: "Unique Card Number",
+          description: "An individual UCN is assigned to every card."
+        },
+        {
+          title: "UAE National Flag",
+          description: "All our cards are made and exclusively issued to UAE addresses."
+        },
+        {
+          title: "International Symbol of Access",
+          description: "The ISA is maintained as an international standard (ISO 7001) by the International Commission on Technology and Accessibility (ICTA), a committee of Rehabilitation International (RI)."
+        }
+      ]
     },
     {
       name: "Carers Card",
-      frontImage: "/Global Carers Card DEMO_page-0003.jpg",
-      backImage: "/Global Carers Card DEMO_page-0003.jpg",
+      image: "/Global Carers Card DEMO_page-0003.jpg",
       title: "Recognition and Support for Dedicated Caregivers",
       subtitle: "CARERS CARD",
       description: "The Carers Card provides recognition and support for those who care for individuals with disabilities.",
       validity: "Valid for three years",
-      features: {
-        front: [
-          {
-            title: "Caregiver Information",
-            description: "Featuring the caregiver's name and credentials.",
-            position: "left"
-          },
-          {
-            title: "Photo Identification",
-            description: "A full colour photo prevents misuse and provides easy visual identification of the caregiver.",
-            position: "left"
-          },
-          {
-            title: "Security Features",
-            description: "Protected by high quality security features including watermarks and intricate patterns.",
-            position: "left"
-          }
-        ],
-        back: [
-          {
-            title: "Unique Card Number",
-            description: "An individual UCN is assigned to every card.",
-            position: "right"
-          },
-          {
-            title: "UAE Flag",
-            description: "All our cards are made and exclusively issued to UAE addresses.",
-            position: "right"
-          },
-          {
-            title: "Caregiver Symbol",
-            description: "International symbol representing care and support services.",
-            position: "right"
-          }
-        ]
-      }
+      leftFeatures: [
+        {
+          title: "Caregiver Information",
+          description: "Featuring the caregiver's name and credentials."
+        },
+        {
+          title: "Photo Identification",
+          description: "A full colour photo prevents misuse and provides easy visual identification of the caregiver."
+        },
+        {
+          title: "High Security Features",
+          description: "The card is protected by a number of high quality security features including a secure watermark over the card surface, precise intricate guilloche patterns and bespoke background and symbols."
+        }
+      ],
+      rightFeatures: [
+        {
+          title: "Unique Card Number",
+          description: "An individual UCN is assigned to every card."
+        },
+        {
+          title: "UAE National Flag",
+          description: "All our cards are made and exclusively issued to UAE addresses."
+        },
+        {
+          title: "Caregiver Symbol",
+          description: "International symbol representing care and support services for caregivers."
+        }
+      ]
     },
     {
       name: "Customer Support Card",
-      frontImage: "/Global Support Card.jpg",
-      backImage: "/Global Support Card.jpg",
+      image: "/Global Support Card.jpg",
       title: "Enhanced Support for Daily Activities",
       subtitle: "CUSTOMER SUPPORT CARD",
       description: "The Customer Support Card provides enhanced assistance and priority support for individuals requiring additional help.",
       validity: "Valid for three years",
-      features: {
-        front: [
-          {
-            title: "Personal Information",
-            description: "Featuring the card holder's name and details.",
-            position: "left"
-          },
-          {
-            title: "Photo Identification",
-            description: "A full colour photo prevents misuse and provides easy visual identification.",
-            position: "left"
-          },
-          {
-            title: "Security Features",
-            description: "Protected by high quality security features and authentication elements.",
-            position: "left"
-          }
-        ],
-        back: [
-          {
-            title: "Unique Card Number",
-            description: "An individual UCN is assigned to every card.",
-            position: "right"
-          },
-          {
-            title: "UAE Flag",
-            description: "All our cards are made and exclusively issued to UAE addresses.",
-            position: "right"
-          },
-          {
-            title: "Support Symbol",
-            description: "International symbol representing customer support and assistance services.",
-            position: "right"
-          }
-        ]
-      }
+      leftFeatures: [
+        {
+          title: "Personal Information",
+          description: "Featuring the card holder's name and details."
+        },
+        {
+          title: "Photo Identification",
+          description: "A full colour photo prevents misuse and provides easy visual identification of the card holder."
+        },
+        {
+          title: "High Security Features",
+          description: "The card is protected by a number of high quality security features including a secure watermark over the card surface, precise intricate guilloche patterns and bespoke background and symbols."
+        }
+      ],
+      rightFeatures: [
+        {
+          title: "Unique Card Number",
+          description: "An individual UCN is assigned to every card."
+        },
+        {
+          title: "UAE National Flag",
+          description: "All our cards are made and exclusively issued to UAE addresses."
+        },
+        {
+          title: "Support Symbol",
+          description: "International symbol representing customer support and assistance services."
+        }
+      ]
     }
   ];
 
@@ -152,7 +122,6 @@ const CardShowcase = () => {
   }, []);
 
   const currentCard = cards[activeCard];
-  const currentFeatures = showFrontView ? currentCard.features.front : currentCard.features.back;
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
@@ -176,98 +145,72 @@ const CardShowcase = () => {
           </h2>
         </div>
 
-        {/* View Toggle Buttons */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-1 flex">
-            <button
-              onClick={() => setShowFrontView(true)}
-              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
-                showFrontView 
-                  ? 'bg-blue-600 text-white shadow-md' 
-                  : 'text-gray-600 hover:text-blue-600'
-              }`}
-            >
-              Front View
-            </button>
-            <button
-              onClick={() => setShowFrontView(false)}
-              className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
-                !showFrontView 
-                  ? 'bg-blue-600 text-white shadow-md' 
-                  : 'text-gray-600 hover:text-blue-600'
-              }`}
-            >
-              Back View
-            </button>
-          </div>
-        </div>
-
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
           {/* Left Features */}
-          <div className="lg:col-span-4 space-y-8">
-            {currentFeatures.filter(f => f.position === 'left').map((feature, index) => (
-              <div key={index} className="text-right">
-                <div className="flex items-start justify-end mb-4">
-                  <div className="text-right mr-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                  <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+          <div className="lg:col-span-4 space-y-12">
+            {currentCard.leftFeatures.map((feature, index) => (
+              <div key={index} className="relative">
+                <div className="text-right pr-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <div className="w-full h-px bg-gradient-to-l from-blue-600 to-transparent"></div>
+                {/* Connection Line and Dot */}
+                <div className="absolute right-0 top-6 flex items-center">
+                  <div className="w-8 h-px bg-blue-600"></div>
+                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Center Card */}
-          <div className="lg:col-span-4 flex justify-center">
+          <div className="lg:col-span-4 flex justify-center relative">
             <div className="relative">
               <div className="w-96 h-60 rounded-2xl shadow-2xl animate-card-3d overflow-hidden transform hover:scale-105 transition-transform duration-300">
                 <img 
-                  src={showFrontView ? currentCard.frontImage : currentCard.backImage} 
-                  alt={`${currentCard.name} ${showFrontView ? 'front' : 'back'}`}
+                  src={currentCard.image} 
+                  alt={currentCard.name}
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
               
-              {/* Card Controls */}
-              <div className="flex justify-center mt-6 space-x-4">
-                <button
-                  onClick={() => setIsFlipped(!isFlipped)}
-                  className="flex items-center px-4 py-2 bg-uae-green text-white rounded-lg hover:bg-green-700 transition-colors duration-300"
-                >
-                  <RotateCcw className="w-4 h-4 mr-2" />
-                  Flip Card
-                </button>
-                <button className="flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors duration-300">
-                  <Eye className="w-4 h-4 mr-2" />
-                  3D View
-                </button>
-              </div>
+              {/* Connection lines from card to features */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>
+                {/* Left side connection lines */}
+                <path d="M 0 50 Q 50 50 100 50" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.3" />
+                <path d="M 0 120 Q 50 120 100 120" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.3" />
+                <path d="M 0 190 Q 50 190 100 190" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.3" />
+                
+                {/* Right side connection lines */}
+                <path d="M 296 50 Q 346 50 396 50" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.3" />
+                <path d="M 296 120 Q 346 120 396 120" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.3" />
+                <path d="M 296 190 Q 346 190 396 190" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.3" />
+              </svg>
             </div>
           </div>
 
           {/* Right Features */}
-          <div className="lg:col-span-4 space-y-8">
-            {currentFeatures.filter(f => f.position === 'right').map((feature, index) => (
-              <div key={index} className="text-left">
-                <div className="flex items-start mb-4">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+          <div className="lg:col-span-4 space-y-12">
+            {currentCard.rightFeatures.map((feature, index) => (
+              <div key={index} className="relative">
+                <div className="text-left pl-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <div className="w-full h-px bg-gradient-to-r from-blue-600 to-transparent"></div>
+                {/* Connection Line and Dot */}
+                <div className="absolute left-0 top-6 flex items-center">
+                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-8 h-px bg-blue-600"></div>
+                </div>
               </div>
             ))}
           </div>
