@@ -108,10 +108,10 @@ const Header = () => {
               <img 
                 src="/Logo.png" 
                 alt="GCDC Logo" 
-                className="h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+                className="h-20 w-auto group-hover:scale-105 transition-transform duration-300"
               />
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">GCDC</h1>
+                <h1 className="text-4xl font-bold text-gray-900">GCDC</h1>
                 <p className="text-sm text-uae-green">National Disability Card</p>
               </div>
             </Link>
