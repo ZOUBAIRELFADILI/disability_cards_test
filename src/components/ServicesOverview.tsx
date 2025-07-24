@@ -8,6 +8,7 @@ const ServicesOverview = () => {
       icon: CreditCard,
       title: "Disabilities Card",
       description: "Official recognition and access to comprehensive support services and benefits across the UAE.",
+      image: "/Global Disability Carde.jpg",
       color: "from-uae-green to-green-700",
       features: [
         "Priority access to services",
@@ -22,6 +23,7 @@ const ServicesOverview = () => {
       icon: Heart,
       title: "Carers Card",
       description: "Recognition and support for dedicated caregivers who provide essential care to individuals with disabilities.",
+      image: "/Global Carers Card DEMO_page-0003.jpg",
       color: "from-uae-red to-red-700",
       features: [
         "Respite care services",
@@ -36,6 +38,7 @@ const ServicesOverview = () => {
       icon: Headphones,
       title: "Customer Support Card",
       description: "Enhanced assistance and priority support for individuals requiring additional help with daily activities.",
+      image: "/Global Support Card.jpg",
       color: "from-uae-black to-gray-800",
       features: [
         "24/7 priority support",
@@ -72,10 +75,15 @@ const ServicesOverview = () => {
                 className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden"
               >
                 {/* Card Header with Gradient */}
-                <div className={`bg-gradient-to-br ${service.color} p-8 text-white relative overflow-hidden`}>
-                  <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
-                    <IconComponent className="w-full h-full" />
-                  </div>
+                <div className="relative p-8 text-white overflow-hidden h-64">
+                  {/* Card Image Background */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                  />
+                  {/* Dark Overlay for Text Readability */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-85`} />
+                  
                   <div className="relative z-10">
                     <div className="bg-white/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-8 h-8" />
